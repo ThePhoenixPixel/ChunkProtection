@@ -1,6 +1,3 @@
-I forked this Minecraft Server plugin from:
-https://github.com/ThePhoenixPixel/ChunkProtection
-
 <h1>ChunkProtection</h1>
 <p>The perfect Minecraft Plugin for your server to give Players freedom to build and protect</p>
 <h3>With this plugin you can simply claim plots in a size of 16x16 (X and Z, Y complete)</h3>
