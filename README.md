@@ -13,6 +13,7 @@
 
 <b>Requirements:</b><br>
 <a href="https://www.spigotmc.org/resources/vault.34315/">Vault</a>
+
 <style>
     b {
         color: red;
