@@ -1,7 +1,7 @@
 package eu.phoenixcraft.chunkprotection;
 
-import eu.phoenixcraft.chunkprotection.command.cp_command;
-import eu.phoenixcraft.chunkprotection.core.ev_interaction;
+import eu.phoenixcraft.chunkprotection.command.Cp;
+import eu.phoenixcraft.chunkprotection.event.ev_interaction;
 import eu.phoenixcraft.chunkprotection.core.tabCompleter;
 import eu.phoenixcraft.chunkprotection.storage.MySQL;
 import net.milkbowl.vault.economy.Economy;
@@ -22,7 +22,7 @@ public final class ChunkProtection extends JavaPlugin {
     public static String db_name;
     public static String db_user;
     public static String db_passwd;
-    public static Economy econ = null;
+    //public static Economy econ = null;
 
 
 
@@ -40,11 +40,11 @@ public final class ChunkProtection extends JavaPlugin {
         String ANSI_WHITE = "\u001B[37m";
 
 
-        if (!setupEconomy() ) {
+        /*if (!setupEconomy() ) {
             getLogger().severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
             getServer().getPluginManager().disablePlugin(this);
             return;
-        }
+        }*/
 
 
 
@@ -71,7 +71,7 @@ public final class ChunkProtection extends JavaPlugin {
         }
 
         // Commands registrieren
-        getCommand("cp").setExecutor(new cp_command(this));
+        getCommand("cp").setExecutor(new Cp(this));
         getCommand("cp").setTabCompleter(new tabCompleter());
         getServer().getPluginManager().registerEvents(new ev_interaction(), this);
 
@@ -88,7 +88,7 @@ public final class ChunkProtection extends JavaPlugin {
 
     }
 
-    private boolean setupEconomy() {
+    /*private boolean setupEconomy() {
         if (getServer().getPluginManager().getPlugin("Vault") == null) {
             return false;
         }
@@ -98,7 +98,7 @@ public final class ChunkProtection extends JavaPlugin {
         }
         econ = rsp.getProvider();
         return econ != null;
-    }
+    }*/
 
     @Override
     public void onDisable() {

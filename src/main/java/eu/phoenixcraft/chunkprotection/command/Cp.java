@@ -6,25 +6,26 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 import java.sql.Connection;
 
 import static eu.phoenixcraft.chunkprotection.core.ClaimChunk.*;
 
-public class cp_command implements CommandExecutor {
+public class Cp implements CommandExecutor {
 
-    private final ChunkProtection plugin;
-    private MySQL mysql;
-    public Connection connection;
+    private ChunkProtection plugin;
+    private MySQL mySQL;
+    private Connection connection;
 
-    public cp_command(ChunkProtection plugin) {
+    public Cp(ChunkProtection plugin){
         this.plugin = plugin;
-        this.mysql = plugin.getMysql();
-        this.connection = mysql.getConnection();
+        this.mySQL = plugin.getMysql();
+        this.connection = mySQL.getConnection();
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
         if (!(sender instanceof Player)) {
             sender.sendMessage("Your are not a player");
             return true;
@@ -60,10 +61,8 @@ public class cp_command implements CommandExecutor {
                 player.sendMessage("Error bitte das Team kontaktieren");
                 return true;
             }
-        }
-
-        // COMMAND UNCLAIM ----------------------------------------------------
-        else if(args[0].equalsIgnoreCase("unclaim")) {
+        } else if(args[0].equalsIgnoreCase("unclaim")) {
+            // COMMAND UNCLAIM ----------------------------------------------------
 
             if (removeClaimedChunk(player, connection)){
                 player.sendMessage("Succsesfuly remove the Chunk");
@@ -85,7 +84,7 @@ public class cp_command implements CommandExecutor {
 
 
         // COMMAND RESELL ----------------------------------------------------
-        else if(args[0].equalsIgnoreCase("resell")) {
+        /*else if(args[0].equalsIgnoreCase("resell")) {
             if(args.length < 2) {
                 player.sendMessage("Syntax: /cp resell <amount>");
             }
@@ -107,7 +106,7 @@ public class cp_command implements CommandExecutor {
                 player.sendMessage("Plot transfered successfully!");
             else
                 player.sendMessage("Plot not bought. To less money?");
-        }
+        }*/
 
 
 
@@ -115,13 +114,6 @@ public class cp_command implements CommandExecutor {
             player.sendMessage("Not implemented!");
         }
 
-
-        /*
-        OfflinePlayer op = player;
-        ChunkProtection.econ.depositPlayer(op, 1000);
-         */
-
-        return true;
+        return false;
     }
-
 }

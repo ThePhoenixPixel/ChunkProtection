@@ -113,7 +113,7 @@ public class ClaimChunk {
 
 
 
-    public static boolean resellChunk(Player player, long price, Connection connection) {
+    /*ublic static boolean resellChunk(Player player, long price, Connection connection) {
         String query = "UPDATE claimed_chunks SET resell = ?, price = ? WHERE chunk_id = ? AND player_uuid = ? AND world_name = ?";
 
         UUID playerUUID = player.getUniqueId();
@@ -188,7 +188,7 @@ public class ClaimChunk {
             // Fehler bei der Abfrage
             return false;
         }
-    }
+    }*/
 
 
 
