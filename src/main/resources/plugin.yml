@@ -3,7 +3,5 @@ version: '${project.version}'
 main: eu.phoenixcraft.chunkprotection.ChunkProtection
 api-version: '1.20'
 commands:
-  claim:
-    usage: /claim
-  unclaim:
-    usage: /unclaim
+  cp:
+    usage: /cp

@@ -11,7 +11,7 @@ public class MySQL {
     private final String jdbcUrl;
     private final String username;
     private final String password;
-    private Connection connection;
+    public static Connection connection;
 
     public MySQL(String host, int port, String database, String username, String password) {
         this.jdbcUrl = "jdbc:mysql://" + host + ":" + port + "/" + database;
@@ -63,7 +63,11 @@ public class MySQL {
         String sql = "CREATE TABLE IF NOT EXISTS claimed_chunks ( " +
                 "id INT AUTO_INCREMENT PRIMARY KEY, " +
                 "player_uuid VARCHAR(36), " +
-                "chunk_id INT, " +
+                "chunk_id BIGINT, " +
+                "chunk_x INT, " +
+                "chunk_z INT, " +
+                "price BIGINT DEFAULT 0.0, " +
+                "resell BOOLEAN DEFAULT FALSE, " +
                 "world_name VARCHAR(255))"; // Füge die Spalte für den Weltnamen hinzu
         executeStatement(sql);
     }
