@@ -1,5 +1,3 @@
-I forked this Minecraft Server plugin from:
-https://github.com/ThePhoenixPixel/ChunkProtection
 
 <h1>ChunkProtection</h1>
 <p>The perfect Minecraft Plugin for your server to give Players freedom to build and protect</p>
