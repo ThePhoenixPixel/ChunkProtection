@@ -1,6 +1,7 @@
 package eu.phoenixcraft.chunkprotection;
 
 import eu.phoenixcraft.chunkprotection.command.Cp;
+import eu.phoenixcraft.chunkprotection.command.CpTabCompleter;
 import eu.phoenixcraft.chunkprotection.event.ev_interaction;
 import eu.phoenixcraft.chunkprotection.core.tabCompleter;
 import eu.phoenixcraft.chunkprotection.storage.MySQL;
@@ -72,7 +73,7 @@ public final class ChunkProtection extends JavaPlugin {
 
         // Commands registrieren
         getCommand("cp").setExecutor(new Cp(this));
-        getCommand("cp").setTabCompleter(new tabCompleter());
+        getCommand("cp").setTabCompleter(new CpTabCompleter());
         getServer().getPluginManager().registerEvents(new ev_interaction(), this);
 
 
