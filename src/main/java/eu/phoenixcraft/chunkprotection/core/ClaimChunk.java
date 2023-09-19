@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.UUID;
 
-import static eu.phoenixcraft.chunkprotection.ChunkProtection.econ;
+//import static eu.phoenixcraft.chunkprotection.ChunkProtection.econ;
 
 public class ClaimChunk {
 

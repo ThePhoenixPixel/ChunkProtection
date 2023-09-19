@@ -3,7 +3,6 @@ package eu.phoenixcraft.chunkprotection;
 import eu.phoenixcraft.chunkprotection.command.Cp;
 import eu.phoenixcraft.chunkprotection.command.CpTabCompleter;
 import eu.phoenixcraft.chunkprotection.event.ev_interaction;
-import eu.phoenixcraft.chunkprotection.core.tabCompleter;
 import eu.phoenixcraft.chunkprotection.storage.MySQL;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.configuration.file.FileConfiguration;
