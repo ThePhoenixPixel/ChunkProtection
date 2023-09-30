@@ -2,3 +2,9 @@ name: ChunkProtection
 version: '${project.version}'
 main: eu.phoenixcraft.chunkprotection.ChunkProtection
 api-version: '1.20'
+<<<<<<< HEAD
+=======
+commands:
+  cp:
+    usage: /cp
+>>>>>>> 9998757c625b737bf1fd5c74b0f2c83d172b50ba

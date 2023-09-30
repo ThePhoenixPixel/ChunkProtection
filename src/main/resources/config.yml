@@ -1,0 +1,9 @@
+lang: en
+db_type: mysql
+db_hostname: 127.0.0.1
+db_port: 3306
+db_name: ChunkProtection
+db_user: root
+db_passwd: YOUR_PASSWD
+
+default_price: 0
