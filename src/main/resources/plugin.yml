@@ -1,0 +1,4 @@
+name: ChunkProtection
+version: '${project.version}'
+main: eu.phoenixcraft.chunkprotection.ChunkProtection
+api-version: '1.20'
