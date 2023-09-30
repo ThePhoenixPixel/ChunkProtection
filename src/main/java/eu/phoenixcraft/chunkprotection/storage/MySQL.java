@@ -72,6 +72,15 @@ public class MySQL {
         executeStatement(sql);
     }
 
+    public void createChunkPermssionTable(){
+        String sql = "CREATE TABLE IF NOT EXISTS permssion ( " +
+                "player_uuid VARCHAR(36)," +
+                "wolrd_name VARCHAR(50)," +
+                "chunk_id BIGINT, " +
+                "permssion VARCHAR(100)";
+        executeStatement(sql);
+    }
+
 
     public void createChunkSettingsTable() {
         String sql = "CREATE TABLE IF NOT EXISTS chunk_settings ( " +

@@ -73,6 +73,11 @@ public final class ChunkProtection extends JavaPlugin {
             getLogger().info("Database Disconnect");
         }
 
+        //create table
+        mysql.createClaimedChunksTable();
+        mysql.createChunkPermssionTable();
+
+
         // Commands registrieren
         getCommand("cp").setExecutor(new Cp(this));
         getCommand("cp").setTabCompleter(new CpTabCompleter());
