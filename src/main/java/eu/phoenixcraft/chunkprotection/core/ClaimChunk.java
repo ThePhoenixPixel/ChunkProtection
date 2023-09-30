@@ -301,7 +301,27 @@ public class ClaimChunk {
         }
     }
 
+    public static boolean checkPermission(String permission, Player player, Connection connection) {
+        String query = "SELECT COUNT(*) FROM permissions WHERE player_uuid = ? AND world_name = ? AND chunk_id = ? AND permission = ?";
 
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, player.getUniqueId().toString());
+            statement.setString(2, player.getWorld().getName());
+            statement.setLong(3, getChunkID(player.getLocation()));
+            statement.setString(4, permission);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                int count = resultSet.getInt(1);
+                return count > 0; // Wenn die Berechtigung gefunden wurde, ist count > 0 und wir geben true zurück
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false; // Wenn es einen Fehler gab oder die Berechtigung nicht gefunden wurde, geben wir false zurück
+    }
 
 
 
